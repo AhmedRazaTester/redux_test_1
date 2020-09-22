@@ -1,7 +1,7 @@
 import { Plus, Minus } from "./ActionTypes"
 
 const initState = {
-    score: 10,
+    score: 28,
     score1: 123
 }
 

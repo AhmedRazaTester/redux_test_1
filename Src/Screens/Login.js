@@ -2,15 +2,21 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import * as types from '../Redux/ActionTypes'
 import { connect } from 'react-redux';
+import { useNavigation, StackActions } from '@react-navigation/native';
 function Login(props) {
 
     const [UserName, setUserName] = useState('')
     const [password, setpassword] = useState('')
+    const navigation = useNavigation();
 
 
     function onLogin() {
 
         props.S_UserName(UserName)
+        // navigation.navigate('Drawer')
+        navigation.dispatch(
+            StackActions.replace('Drawer')
+        );
     }
 
     return (

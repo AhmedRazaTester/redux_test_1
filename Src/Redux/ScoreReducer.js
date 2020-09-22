@@ -1,8 +1,8 @@
-import { Plus, Minus } from "./ActionTypes"
+import { Plus, Minus, ChangeTextColor } from "./ActionTypes"
 
 const initState = {
     score: 28,
-    score1: 123
+    textcolor: "#000"
 }
 
 export default (state = initState, action) => {
@@ -11,6 +11,8 @@ export default (state = initState, action) => {
             return { ...state, score: state.score + 1 }
         case Minus:
             return { ...state, score: state.score - 1 }
+        case ChangeTextColor:
+            return { ...state, textcolor: action.payLoad }
         default:
             return state;
     }

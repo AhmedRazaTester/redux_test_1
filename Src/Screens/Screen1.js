@@ -9,7 +9,7 @@ const Screen1 = (props) => {
     // console.log('=== MY STATE', myState);
     return (
         <View>
-            <Text>{score}</Text>
+            <Text style={{ textAlign: "center", fontSize: score }}>{score}</Text>
         </View>
     )
 }

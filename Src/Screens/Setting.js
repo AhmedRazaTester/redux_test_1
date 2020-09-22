@@ -9,7 +9,7 @@ function Setting(props) {
     return (
         <View>
             <Button title="Plus" onPress={() => { props.increment() }} />
-            <Text style={{ textAlign: "center" }}>{score}</Text>
+            <Text style={{ textAlign: "center", fontSize: score }}>{score}</Text>
             <Button title="Minus" onPress={() => { props.decrement() }} />
         </View>
     )

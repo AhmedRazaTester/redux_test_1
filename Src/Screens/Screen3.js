@@ -9,7 +9,7 @@ export default function Screen3() {
 
     return (
         <View>
-            <Text>{score}</Text>
+            <Text style={{ textAlign: "center", fontSize: score }}>{score}</Text>
         </View>
     )
 }

@@ -13,6 +13,7 @@ function Login(props) {
     function onLogin() {
 
         props.S_UserName(UserName)
+        props.S_Pawword(password)
         // navigation.navigate('Drawer')
         navigation.dispatch(
             StackActions.replace('Drawer')

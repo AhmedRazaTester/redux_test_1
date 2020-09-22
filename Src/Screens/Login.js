@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-
-export default function Login() {
+import * as types from '../Redux/ActionTypes'
+import { connect } from 'react-redux';
+function Login(props) {
 
     const [UserName, setUserName] = useState('')
     const [password, setpassword] = useState('')
@@ -9,6 +10,7 @@ export default function Login() {
 
     function onLogin() {
 
+        props.S_UserName(UserName)
     }
 
     return (
@@ -29,4 +31,14 @@ export default function Login() {
     )
 }
 
-const styles = StyleSheet.create({})
+const mapDispatchToProps = dispatch => {
+    return {
+        // dispatching plain actions
+        S_UserName: (username) => dispatch({ type: types.SaveUserName, payLoad: username }),
+        S_Pawword: (password) => dispatch({ type: types.SavePassword, payLoad: password }),
+
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Login);
+
